@@ -409,6 +409,11 @@ a:visited, a:focus {
     color:#ed2224;
     font-weight:bold;
 }
+    .wrap-contact .pull-left .form-contact .form-group .form-input {
+        width:calc(100% - 108px);
+        display:inline-block;
+        vertical-align:top;
+    }
 .wrap-contact .pull-left .form-contact .form-group input[type="text"] {
     width:220px;
     height:25px;
@@ -416,6 +421,7 @@ a:visited, a:focus {
     border-radius:3px;
     max-width:calc(100% - 108px);
     padding:0 5px;
+    display: block;
     font-size:13px;
 }
 .wrap-contact .pull-left .form-contact .form-group textarea {
@@ -425,6 +431,7 @@ a:visited, a:focus {
     border-radius:3px;
     resize:none;
     padding:5px;
+    display: block;
     font-size:13px;
 }
 .wrap-contact .pull-left .form-contact input[type="submit"] {
@@ -1149,6 +1156,10 @@ a:visited, a:focus {
     width:210px;
     padding-left:0;
 
+}
+.lb-error{
+    width: 100%;
+    text-align: right;
 }
 /*================*/
 

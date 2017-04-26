@@ -26,42 +26,52 @@
                 <h3>Liên hệ</h3>
                 <div class="form-group">
                     <label>Tên công ty <span>*</span></label>
-                    <asp:TextBox ID="txtCompany" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator2" runat="server"
-                        ValidationGroup="SendContact" ControlToValidate="txtCompany" ErrorMessage="Thông tin bắt buộc!"
-                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtCompany" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator2" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtCompany" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Chức vụ <span>*</span></label>
-                    <asp:TextBox ID="txtChucVu" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
-                        ValidationGroup="SendContact" ControlToValidate="txtChucVu" ErrorMessage="Thông tin bắt buộc!"
-                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtChucVu" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtChucVu" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Họ tên <span>*</span></label>
-                    <asp:TextBox ID="txtFullName" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                        ValidationGroup="SendContact" ControlToValidate="txtFullName" ErrorMessage="Thông tin bắt buộc!"
-                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtFullName" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtFullName" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Email <span>*</span></label>
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                    <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
-                        runat="server" ValidationGroup="SendContact" ControlToValidate="txtEmail" ErrorMessage="Email không đúng!"
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
-                        ForeColor="Red"></asp:RegularExpressionValidator>
-                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
-                        ValidationGroup="SendContact" ControlToValidate="txtEmail" ErrorMessage="Thông tin bắt buộc!"
-                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
+                            runat="server" ValidationGroup="SendContact" ControlToValidate="txtEmail" ErrorMessage="Email không đúng!"
+                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+                            ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtEmail" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Nội dung</label>
-                    <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
-                        ValidationGroup="SendContact" ControlToValidate="txtContent" ErrorMessage="Thông tin bắt buộc!"
-                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtContent" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
                 </div>
                 <asp:Button ID="btnGui" runat="server" Text="GỬI" ValidationGroup="SendContact" OnClick="btnGui_Click" />
                 <span><i>*</i> Thông tin bắt buộc</span>
