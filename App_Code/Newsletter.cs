@@ -10,7 +10,7 @@ namespace TLLib
 {
     public class Newsletter
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["VkqDBConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         DBNull dbNULL = DBNull.Value;
 
         public int NewsletterInsert(
