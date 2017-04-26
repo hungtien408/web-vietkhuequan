@@ -2,6 +2,9 @@
     display: none;
 }
 @media screen and (max-width: 1199px) {
+    .container {
+        width:980px;
+    }
     #header .pull-left .slogan p {
         font-size:24px;
     }
@@ -12,15 +15,29 @@
         float:none;
         border:0;
     }
-    #footer ul li:last-child {
-        padding-left:45px;
-    }
+    
     /**/
     .wrap-contact .pull-left {
         width:45%;
     }
     .wrap-contact .pull-right {
         width:50%;
+    }
+    /**/
+    #footer .pull-left .tt-cty {
+        padding-left:25px;
+    }
+    #footer .lh-ft {
+        padding-left:20px;
+    }
+    #footer .pull-left .tt-cty ul li {
+        font-size:12px;
+    }
+    #footer .lh-ft p a {
+        font-size:12px;
+    }
+    #footer .pull-right p, #footer .pull-right a {
+        font-size:12px;
     }
 }
 @media (min-width: 993px) and (max-width: 1199px) {
@@ -52,6 +69,13 @@
     }
 }
 @media screen and (max-width: 991px) {
+    .container {
+        width:750px;
+    }
+    .mo-language {
+        text-align:center;
+        padding:7px 0;
+    }
     .banner-absolute {
          background:none !important;
          height:auto !important;
@@ -80,6 +104,58 @@
     }
     .wrap-product > .content {
         padding-top:20px;
+    }
+    /**/
+    #footer {
+        padding:10px 0;
+    }
+    #footer .pull-left{
+        text-align:center;
+        float:none !important;
+        display:block;
+    }
+    #footer .pull-left .logo-ft {
+        display:block;
+        float:none;
+        margin-bottom:10px;
+    }
+    #footer .pull-left .logo-ft img {
+        width:115px;
+    }
+    #footer .pull-left .tt-cty {
+        float:none;
+        text-align:center;
+        padding:0;
+    }
+    #footer .pull-left .tt-cty h1 {
+        font-size:12px;
+        margin-bottom:5px;
+        line-height:16px;
+    }
+    #footer .pull-left .tt-cty ul {
+        padding:0;
+        background:none;
+    }
+    #footer .pull-left .tt-cty ul li {
+        font-size:10px;
+        line-height:14px;
+    }
+    #footer .lh-ft {
+        padding:0;
+        text-align:center;
+        float:none;
+        margin-top:0;
+        display:none;
+    }
+    #footer .lh-ft p {
+        background:none;
+        padding:0;
+    }
+    #footer .pull-right {
+        float:none !important;
+        text-align:center;
+        margin-top:0;
+        display:none;
     }
 }
 
