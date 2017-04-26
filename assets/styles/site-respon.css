@@ -1,0 +1,162 @@
+﻿.ipadmo-992 { /* ẩn nút menu */
+    display: none;
+}
+@media screen and (max-width: 1199px) {
+    #header .pull-left .slogan p {
+        font-size:24px;
+    }
+    #header .pull-right ul#menu > li {
+        padding:0 15px;
+    }
+    #footer ul li {
+        float:none;
+        border:0;
+    }
+    #footer ul li:last-child {
+        padding-left:45px;
+    }
+    /**/
+    .wrap-contact .pull-left {
+        width:45%;
+    }
+    .wrap-contact .pull-right {
+        width:50%;
+    }
+}
+@media (min-width: 993px) and (max-width: 1199px) {
+    
+}
+@media (max-width: 992px) {
+    .ipadmo-992 { /* hiện menu đt */
+        display: block;
+    }
+    .desktop-992 { /* ẩn menu pc */
+        display: none;
+    }
+    .menu-mo {
+        text-align:left;
+        line-height:50px;
+        color:#000;
+        float:left;
+        margin-top: 18px;
+    }
+    .menu-mo:hover {
+        color:#000;
+    }
+    .menu-mo span {
+        line-height:50px;
+        color:#000;
+    }
+    #header .pull-right .language {
+        display:none;
+    }
+}
+@media screen and (max-width: 991px) {
+    .banner-absolute {
+         background:none !important;
+         height:auto !important;
+    }
+    .banner-absolute img{
+        display:block !important;
+        width:100%;
+    }
+    .wrap-product .head .container .content-head {
+        position:static;
+        transform:translateY(0%);
+        -webkit-transform:translateY(0%);
+        -moz-transform:translateY(0%);
+        -ms-transform:translateY(0%);
+        -o-transform:translateY(0%);
+        max-width:100%;
+        margin:0 auto;
+        text-align:center;
+        display:none;
+    }
+    .wrap-product .head .container .content-head p {
+        text-align:center;
+    }
+    .wrap-product .head .container {
+        position:static;
+    }
+    .wrap-product > .content {
+        padding-top:20px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+   
+}
+@media screen and (max-width: 820px) {
+
+}       
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 992px){ 
+	
+}
+@media screen and (max-width: 767px){
+    #footer .pull-right {
+        float:left !important;
+    }
+    .wrap-product .content section .item-cate .item {
+        width:100%;
+        margin-bottom:15px;
+    }
+    /**/
+    .wrap-contact .pull-left {
+        width:100%;
+        margin-bottom:25px;
+    }
+    .wrap-contact .pull-right {
+        width:100%;
+    }
+    .wrap-contact .pull-left .form-contact .form-group input[type="text"] {
+        width:450px;
+        height:30px;
+        max-width:100%;
+    }
+    .wrap-contact .pull-left .form-contact .form-group textarea {
+        width:450px;
+        max-width:100%;
+        height:195px;
+    }
+    .wrap-contact .pull-left .form-contact input[type="submit"] {
+        margin-left:0;
+    }
+}
+@media screen and (max-width: 640px){
+    #header .pull-left .slogan p {
+        display:none;
+    }
+    .wrap-about {
+        height:auto !important;
+        background-image:none;
+    }
+    .wrap-about ul {
+        height:auto !important;
+    }
+}
+@media screen and (max-width: 550px){
+    .wrap-product .content section .head .intro h1 {
+        font-size:24px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .wrap-product .content section .head span {
+        display:none;
+    }
+    .wrap-product .content section .head .intro {
+        width:100%;
+        padding-left:0;
+    }
+    .wrap-product .content section .head .intro h1 {
+        font-size:18px;
+    }
+}
+@media screen and (max-width: 420px){
+    .wrap-product .content section .item-cate .item .content {
+        padding:10px 15px;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+}
