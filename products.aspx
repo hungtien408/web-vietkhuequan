@@ -10,7 +10,7 @@
             <img src="assets/images/img-pro.jpg" alt="" />
             <div class="container">
                 <div class="content-head">
-                    <h1>sản phẩm - dịch vụ</h1>
+                    <h1>事業内容</h1>
                     <p>Nắm rõ thị trường Việt Nam và hiểu rõ nhu cầu của Khách Hàng Nhật Bản đã và đang thâm nhập thị trường Việt. Chúng tôi đang có các Giải pháp về kinh doanh, công nghệ giải quyết bài toán nhân lực và giảm chi phí sau:</p>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="assets/images/item-4.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Data Input</h3></a>
+                            <a href="products-detail.aspx"><h3>Data Entry</h3></a>
                             <ul>
                                 <li>Xây dựng hệ thống đáng ứng nhu cầu nhập liệu</li>
                                 <li>Xây dựng hệ thống báo cáo</li>

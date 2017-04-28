@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="form-contact">
-                <h3>Contact</h3>
+                <h3>Contact Us</h3>
                 <div class="form-group">
                     <label>Company Name <span>*</span></label>
                     <div class="form-input">

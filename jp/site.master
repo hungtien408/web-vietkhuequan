@@ -80,14 +80,14 @@
                                     <img src="../assets/images/logo.png" alt="" /></a>
                             </div>
                             <div class="slogan">
-                                <p>Kết nối giá trị <span>Việt - Nhật</span></p>
+                                <p>価値のつながり <span>ベトナム - 日本</span></p>
                             </div>
                         </div>
                         <div class="pull-right">
                             <ul id="menu" class="desktop-992">
-                                <li><a href="about-us.aspx">紹介する</a></li>
-                                <li><a href="products.aspx">の商品 - サービスの</a></li>
-                                <li><a href="contact.aspx">接続し</a></li>
+                                <li><a href="about-us.aspx">会社概要</a></li>
+                                <li><a href="products.aspx">事業内容</a></li>
+                                <li><a href="contact.aspx">お問い合わせ</a></li>
                             </ul>
                             <a class="panel-a menu-mo ipadmo-992" href="#menumobile" data-position="true" data-type="false">
                                 <span class="fa fa-reorder"></span>Menu
@@ -141,7 +141,7 @@
                     <div class="menu-mobile">
                         <div class="logo">
                             <a href="~/" runat="server">
-                                <img class="img-responsive" src="assets/images/logo.png" alt="logo" />
+                                <img class="img-responsive" src="../assets/images/logo.png" alt="logo" />
                             </a>
                         </div>
                         <div class="mo-language">
