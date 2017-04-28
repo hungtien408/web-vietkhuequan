@@ -7,25 +7,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="wrap-contact">
         <div class="pull-left">
-            <h1>Công ty TNHH Việt Khuê Quân</h1>
+            <h1>VIET KHUE QUAN Co.,Ltd</h1>
             <div class="item">
-                <p>Văn phòng đại diện</p>
+                <p>営業所</p>
                 <ul>
                     <li class="lc">67 Lê Trung Nghĩa, P.12, Q. Tân Bình, TP. HCM</li>
                     <li class="ph">08-73-012-247</li>
                 </ul>
             </div>
             <div class="item">
-                <p>Trụ sở</p>
+                <p>本社</p>
                 <ul>
                     <li class="lc">Số 08 Hai Bà Trưng, P. Phước Hiệp, Tỉnh Bà Rịa - Vũng Tàu</li>
                     <li class="ph">08-73-012-247</li>
                 </ul>
             </div>
             <div class="form-contact">
-                <h3>Liên hệ</h3>
+                <h3>お問い合わせ</h3>
                 <div class="form-group">
-                    <label>Tên công ty <span>*</span></label>
+                    <label>会 社 名 <span>*</span></label>
                     <div class="form-input">
                         <asp:TextBox ID="txtCompany" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator2" runat="server"
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Chức vụ <span>*</span></label>
+                    <label>役 職 名 <span>*</span></label>
                     <div class="form-input">
                         <asp:TextBox ID="txtChucVu" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Họ tên <span>*</span></label>
+                    <label>氏 名 <span>*</span></label>
                     <div class="form-input">
                         <asp:TextBox ID="txtFullName" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Email <span>*</span></label>
+                    <label>メールアドレス <span>*</span></label>
                     <div class="form-input">
                         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Nội dung</label>
+                    <label>お問い合わせ内容</label>
                     <div class="form-input">
                         <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
@@ -73,7 +73,7 @@
                             Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
-                <asp:Button ID="btnGui" runat="server" Text="GỬI" ValidationGroup="SendContact" OnClick="btnGui_Click" />
+                <asp:Button ID="btnGui" runat="server" Text="送信" ValidationGroup="SendContact" OnClick="btnGui_Click" />
                 <span><i>*</i> Thông tin bắt buộc</span>
             </div>
         </div>

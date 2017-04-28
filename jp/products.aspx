@@ -20,7 +20,7 @@
                 <div class="head">
                     <span>01</span>
                     <div class="intro">
-                        <h1>giải pháp <b>kinh doanh</b></h1>
+                        <h1>ビジネスソリューション </b></h1>
                         <p>Tuỳ mô hình của Khách hàng, chúng tôi sẽ xây dựng kế hoạch marketing, call center.. để đưa sản phậm/ dịch vụ thâm nhập hiệu quả nhất.</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-1.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Marketing</h3></a>
+                            <a href="products-detail.aspx"><h3>マーケティング</h3></a>
                             <ul>
                                 <li>Xây dựng và thực hiện kế hoạch quảng bá</li>
                                 <li>Xây dựng và thực hiện kế hoạch quảng cáo</li>
@@ -38,7 +38,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-2.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Call Center</h3></a>
+                            <a href="products-detail.aspx"><h3>コールセンター</h3></a>
                             <ul>
                                 <li>Xây dựng quy trình nghiệp vụ chăm sóc khách hàng</li>
                                 <li>Cung cấp nhân sự</li>
@@ -52,7 +52,7 @@
                 <div class="head">
                     <span>02</span>
                     <div class="intro">
-                        <h1>giải pháp <b>công nghệ thông tin</b></h1>
+                        <h1>ITソリューション</b></h1>
                         <p>Lắng nghe nhu cầu và nghiệp vụ của Khách hàng, chúng tôi sẽ lập qui trình và xây dựng các giải pháp IT phù hợp.</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-3.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Ecommerce</h3></a>
+                            <a href="products-detail.aspx"><h3>Eコマース</h3></a>
                             <ul>
                                 <li>Xây dựng giải pháp cho gian hàng điện tử</li>
                                 <li>Xây dựng qui trình nghiệp vụ, quản lý</li>
@@ -71,7 +71,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-4.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Data Input</h3></a>
+                            <a href="products-detail.aspx"><h3>データ入力</h3></a>
                             <ul>
                                 <li>Xây dựng hệ thống đáng ứng nhu cầu nhập liệu</li>
                                 <li>Xây dựng hệ thống báo cáo</li>

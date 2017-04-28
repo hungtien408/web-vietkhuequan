@@ -20,7 +20,7 @@
                 <div class="head">
                     <span>01</span>
                     <div class="intro">
-                        <h1>giải pháp <b>kinh doanh</b></h1>
+                        <h1>Business <b>Solutions</b></h1>
                         <p>Tuỳ mô hình của Khách hàng, chúng tôi sẽ xây dựng kế hoạch marketing, call center.. để đưa sản phậm/ dịch vụ thâm nhập hiệu quả nhất.</p>
                     </div>
                 </div>
