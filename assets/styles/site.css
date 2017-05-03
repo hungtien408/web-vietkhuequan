@@ -51,6 +51,16 @@ a:visited, a:focus {
     max-width:100%;
 }
 /*========================header=================*/
+.en-ver {
+    text-align:center;
+    margin-top:10px !important;
+}
+.en-ver p {
+    line-height:30px;
+}
+.en-ver p span{
+    display:block;   
+}
 #header {
     position: relative;
     width: 100%;

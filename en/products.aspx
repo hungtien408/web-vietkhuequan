@@ -10,7 +10,7 @@
             <img src="../assets/images/img-pro.jpg" alt="" />
             <div class="container">
                 <div class="content-head">
-                    <h1>sản phẩm - dịch vụ</h1>
+                    <h1>Products & Services</h1>
                     <p>Nắm rõ thị trường Việt Nam và hiểu rõ nhu cầu của Khách Hàng Nhật Bản đã và đang thâm nhập thị trường Việt. Chúng tôi đang có các Giải pháp về kinh doanh, công nghệ giải quyết bài toán nhân lực và giảm chi phí sau:</p>
                 </div>
             </div>
@@ -51,8 +51,8 @@
             <section>
                 <div class="head">
                     <span>02</span>
-                    <div class="intro">
-                        <h1>giải pháp <b>công nghệ thông tin</b></h1>
+                    <div class="intro">  
+                        <h1><b>IT</b> Solutions</h1>
                         <p>Lắng nghe nhu cầu và nghiệp vụ của Khách hàng, chúng tôi sẽ lập qui trình và xây dựng các giải pháp IT phù hợp.</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-3.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Ecommerce</h3></a>
+                            <a href="products-detail.aspx"><h3>E-commerce</h3></a>
                             <ul>
                                 <li>Xây dựng giải pháp cho gian hàng điện tử</li>
                                 <li>Xây dựng qui trình nghiệp vụ, quản lý</li>
@@ -71,7 +71,7 @@
                     <div class="item">
                         <a href="products-detail.aspx"><img src="../assets/images/item-4.jpg" alt="" /></a>
                         <div class="content">
-                            <a href="products-detail.aspx"><h3>Data Input</h3></a>
+                            <a href="products-detail.aspx"><h3>Data Entry</h3></a>
                             <ul>
                                 <li>Xây dựng hệ thống đáng ứng nhu cầu nhập liệu</li>
                                 <li>Xây dựng hệ thống báo cáo</li>
