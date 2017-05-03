@@ -224,7 +224,7 @@
                 <EditFormSettings EditFormType="Template">
                     <FormTemplate>
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
-                            <h3 class="searchTitle">Thông Tin Kết Nối IEI</h3>
+                            <h3 class="searchTitle">Thông Tin Kết Nối VKQ</h3>
                             <table class="search">
                                 <tr>
                                     <td class="left" valign="top">Email
