@@ -226,7 +226,7 @@ public partial class ad_single_partner : System.Web.UI.Page
                 string strCC = "";
                 string strSubject = txtSubject.Text.Trim();
                 string strBody = FCKEditorFix.Fix(txtBody.Content.Trim());
-                bool bEnableSsl = true;
+                bool bEnableSsl = false;
 
                 cmd.SendMail(
                     strHost,
