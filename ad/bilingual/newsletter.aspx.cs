@@ -217,16 +217,20 @@ public partial class ad_single_partner : System.Web.UI.Page
                 lblSucess.Text = "";
               
                 var dvEmail = (ObjectDataSource1.Select() as DataView);
-                string strHost = "mail.vkq.com.vn";
+                //string strHost = "mail.vkq.com.vn";
+                //int iPort = 587;
+                //string strMailFrom = "info@vkq.com.vn";
+                //string strPassword = "Vietkhuequan020";
+                string strHost = "smtp.gmail.com";
                 int iPort = 587;
-                string strMailFrom = "info@vkq.com.vn";
-                string strPassword = "Vietkhuequan020";
-               
+                string strMailFrom = "noreply@betterlifejp.com";
+                string strPassword = "12345678";
+
                 string strMailTo = item["Email"].Text.ToString();
                 string strCC = "";
                 string strSubject = txtSubject.Text.Trim();
                 string strBody = FCKEditorFix.Fix(txtBody.Content.Trim());
-                bool bEnableSsl = false;
+                bool bEnableSsl = true;
 
                 cmd.SendMail(
                     strHost,
