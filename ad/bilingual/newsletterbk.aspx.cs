@@ -13,6 +13,7 @@ using System.Data;
 
 public partial class ad_single_partner : System.Web.UI.Page
 {
+    private Common cmd = new Common();
     #region Common Method
 
     protected void DropDownList_DataBound(object sender, EventArgs e)
@@ -37,10 +38,7 @@ public partial class ad_single_partner : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (!HttpContext.Current.User.IsInRole("Quản Lý Kết Nối IEI_Email Letter"))
-        //{
-        //    Response.Redirect("access-denied.aspx");
-        //}
+
     }
     public void RadGrid1_ItemCreated(object sender, Telerik.Web.UI.GridItemEventArgs e)
     {
@@ -139,24 +137,32 @@ public partial class ad_single_partner : System.Web.UI.Page
             var row = command == "PerformInsert" ? (GridEditFormInsertItem)e.Item : (GridEditFormItem)e.Item;
             //var FileNewsletterImage = (RadUpload)row.FindControl("FileNewsletterImage");
 
-            string strNewsletterCategoryName = ((TextBox)row.FindControl("txtNewsletterCategoryName")).Text.Trim();
-            var oNewsletter = new NewsletterCategory();
+            string strEmail1 = ((TextBox)row.FindControl("txtEmail")).Text.Trim();
+            string strDiaChi = ((TextBox)row.FindControl("txtDiaChi")).Text.Trim();
+            string strContent = ((TextBox)row.FindControl("txtContent")).Text.Trim();
+            string strNewsletterCategory = ((RadComboBox)row.FindControl("ddlGroupMail")).SelectedValue;
+            var oNewsletter = new Newsletter();
             if (e.CommandName == "PerformInsert")
             {
-                if (!string.IsNullOrEmpty(strNewsletterCategoryName))
-                {
-                    oNewsletter.NewsletterCategoryInsert(strNewsletterCategoryName);
-                    RadGrid1.Rebind();
-                }
+                //oNewsletter.NewsletterInsert(
+                //        strEmail1,
+                //        strDiaChi,
+                //        strContent,
+                //        strNewsletterCategory
+                //        );
+                //RadGrid1.Rebind();
             }
             else
             {
                 var dsUpdateParam = ObjectDataSource1.UpdateParameters;
-                var strNewsletterCategoryID = row.GetDataKeyValue("NewsletterCategoryID").ToString();
+                var strEmail = row.GetDataKeyValue("Email").ToString();
                 //var strOldNewsletterImage = ((HiddenField)row.FindControl("hdnNewsletterImage")).Value;
                 //var strOldImagePath = Server.MapPath("~/res/partner/" + strOldNewsletterImage);
 
-                dsUpdateParam["NewsletterCategoryName"].DefaultValue = strNewsletterCategoryName;
+                dsUpdateParam["Email"].DefaultValue = strEmail;
+                dsUpdateParam["DiaChi"].DefaultValue = strDiaChi;
+                dsUpdateParam["Content"].DefaultValue = strContent;
+                dsUpdateParam["NewsletterCategoryID"].DefaultValue = strNewsletterCategory;
                 //dsUpdateParam["ConvertedNewsletterName"].DefaultValue = strConvertedNewsletterName;
                 //dsUpdateParam["NewsletterImage"].DefaultValue = strNewsletterImage;
                 //dsUpdateParam["IsAvailable"].DefaultValue = strIsAvailable;
@@ -177,15 +183,105 @@ public partial class ad_single_partner : System.Web.UI.Page
     }
     protected void RadGrid1_ItemDataBound(object sender, GridItemEventArgs e)
     {
-        //if (e.Item is GridEditableItem && e.Item.IsInEditMode)
-        //{
-        //    var itemtype = e.Item.ItemType;
-        //    var row = itemtype == GridItemType.EditFormItem ? (GridEditFormItem)e.Item : (GridEditFormInsertItem)e.Item;
-        //    var FileNewsletterImage = (RadUpload)row.FindControl("FileNewsletterImage");
+        if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+        {
+            var itemtype = e.Item.ItemType;
+            var row = itemtype == GridItemType.EditFormItem ? (GridEditFormItem)e.Item : (GridEditFormInsertItem)e.Item;
 
-        //    RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileNewsletterImage.ClientID));
+            var Email = ((HiddenField)row.FindControl("hdnEmail")).Value;
+            var ddlGroupMail = (RadComboBox)row.FindControl("ddlGroupMail");
+
+            if (!string.IsNullOrEmpty(Email))
+            {
+                var dv = new Newsletter().NewsletterSelectOne(Email).DefaultView;
+                //dv.RowFilter = "Email = " + Email.ToString();
+
+                if (!string.IsNullOrEmpty(dv[0]["NewsletterCategoryID"].ToString()))
+                    ddlGroupMail.SelectedValue = dv[0]["NewsletterCategoryID"].ToString();
+            }
+
+
+            //RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileNewsletterImage.ClientID));
+        }
+        //if (e.Item is GridDataItem)
+        //{
+        //    var dsSelectParam = ObjectDataSource1.SelectParameters;
+        //    //var ddlGroupMail = (RadComboBox)e.Item.FindControl("ddlGroupMail");
+        //    string list = "";
+        //    if (ddlGroupMail.CheckedItems.Count > 0)
+        //    {
+        //        foreach (var item in ddlGroupMail.CheckedItems)
+        //        {
+        //            list += item.Value + ",";
+        //        }
+        //        dsSelectParam["NewsletterCategoryID"].DefaultValue = list;
+        //    }
         //}
     }
     #endregion
 
+    protected void btnSendEmail_Click(object sender, EventArgs e)
+    {
+        if (RadGrid1.SelectedItems.Count > 0)
+        {
+            foreach (GridDataItem item in RadGrid1.SelectedItems)
+            {
+                if (item.Selected == true)
+                {
+                    lblSucess.Text = "";
+
+                    var dvEmail = (ObjectDataSource1.Select() as DataView);
+                    //string strHost = "mail.vkq.com.vn";
+                    //int iPort = 587;
+                    //string strMailFrom = "info@vkq.com.vn";
+                    //string strPassword = "Vietkhuequan020";
+                    string strHost = "smtp.gmail.com";
+                    int iPort = 587;
+                    string strMailFrom = "noreply@betterlifejp.com";
+                    string strPassword = "12345678";
+
+                    string strMailTo = item["Email"].Text.ToString();
+                    string strCC = "";
+                    string strSubject = txtSubject.Text.Trim();
+                    string strBody = FCKEditorFix.Fix(txtBody.Content.Trim());
+                    bool bEnableSsl = true;
+
+                    cmd.SendMail(
+                        strHost,
+                        iPort,
+                        strMailFrom,
+                        strPassword,
+                        strMailTo,
+                        strCC,
+                        strSubject,
+                        strBody,
+                        bEnableSsl
+                    );
+
+                    lblSucess.Text = "Email đã được gửi đi.";
+                    lblSucess.ForeColor = System.Drawing.Color.Green;
+                }
+            }
+        }
+        else
+        {
+            lblSucess.Text = "Vui lòng chọn email.";
+            lblSucess.ForeColor = System.Drawing.Color.Red;
+        }
+    }
+
+    protected void RadButton1_Click(object sender, EventArgs e)
+    {
+        var dsSelectParam = ObjectDataSource1.SelectParameters;
+        string list = "";
+        if (ddlGroupMail.CheckedItems.Count > 0)
+        {
+            foreach (var item in ddlGroupMail.CheckedItems)
+            {
+                list += item.Value + ",";
+            }
+            list = list.Substring(0, list.LastIndexOf(","));
+            dsSelectParam["NewsletterCategoryID"].DefaultValue = list;
+        }
+    }
 }

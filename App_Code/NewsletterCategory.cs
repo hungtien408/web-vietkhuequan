@@ -10,6 +10,8 @@ namespace TLLib
 {
     public class NewsletterCategory
     {
+        private string m_NewsletterCategoryID;
+
         string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         DBNull dbNULL = DBNull.Value;
 
@@ -23,9 +25,11 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_NewsletterCategory_Insert", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NewsletterCategoryName", string.IsNullOrEmpty(NewsletterCategoryName) ? dbNULL : (object)NewsletterCategoryName);
+                SqlParameter newsletterCategoryIDParam = new SqlParameter("@OutNewsletterCategoryID", null);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
-                errorCodeParam.Size = 4;
-                errorCodeParam.Direction = ParameterDirection.Output;
+                errorCodeParam.Size = newsletterCategoryIDParam.Size = 4;
+                errorCodeParam.Direction = newsletterCategoryIDParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(newsletterCategoryIDParam);
                 cmd.Parameters.Add(errorCodeParam);
                 scon.Open();
                 int success = cmd.ExecuteNonQuery();
@@ -34,12 +38,10 @@ namespace TLLib
                 if (errorCodeParam.Value.ToString() != "0")
                     throw new Exception("Stored Procedure 'usp_NewsletterCategory_Insert' reported the ErrorCode : " + errorCodeParam.Value.ToString());
 
+                m_NewsletterCategoryID = newsletterCategoryIDParam.Value.ToString();
+
                 return success;
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception(ex.Number.ToString());
-            }
+            } 
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
@@ -177,6 +179,45 @@ namespace TLLib
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public DataTable NewsletterCategorySelectByName(
+            string NewsletterCategoryName
+        )
+        {
+            try
+            {
+                var dt = new DataTable();
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_NewsletterCategory_SelectByName", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@NewsletterCategoryName", string.IsNullOrEmpty(NewsletterCategoryName) ? dbNULL : (object)NewsletterCategoryName);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                var sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_NewsletterCategory_SelectByName' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Number.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public string NewsletterCategoryID
+        {
+            get { return m_NewsletterCategoryID; }
+            set { m_NewsletterCategoryID = value; }
         }
 
     }

@@ -39,13 +39,13 @@
                                                     ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <%--<tr>
                                             <td class="login-col-1">
                                             </td>
                                             <td class="login-col-2">
                                                 <asp:CheckBox ID="RememberMe" CssClass="login-check" runat="server" Text="Remember me next time." />
                                             </td>
-                                        </tr>
+                                        </tr>--%>
                                        <%-- <tr>
                                             <td colspan="2">
                                                 <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
@@ -58,13 +58,13 @@
                                                 <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" />
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <%--<tr>
                                             <td class="login-col-1">
                                             </td>
                                             <td class="login-col-2 forgot-link">
                                                 <a href="recovery-password.aspx">Forgot Your Password?</a>
                                             </td>
-                                        </tr>
+                                        </tr>--%>
                                     </table>
                                 </td>
                             </tr>

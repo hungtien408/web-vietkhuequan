@@ -121,11 +121,15 @@
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Text="News Letter" PostBack="False" Font-Bold="True">
                         <Items>
-                            <asp:RadMenuItem runat="server" Text="Gửi Mail" NavigateUrl="~/ad/bilingual/newsletter.aspx">
+                            <asp:RadMenuItem runat="server" Text="Gửi Mail" NavigateUrl="~/ad/bilingual/sendmail.aspx">
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" Text="Group Mail" NavigateUrl="~/ad/bilingual/newslettercategory.aspx">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" Text="Import Mail" NavigateUrl="~/ad/bilingual/importemail.aspx">
                             </asp:RadMenuItem>
                         </Items>
                     </asp:RadMenuItem>

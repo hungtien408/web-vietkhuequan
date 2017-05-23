@@ -65,6 +65,24 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Điện thoại <span>*</span></label>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtPhone" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tiêu đề <span>*</span></label>
+                    <div class="form-input">
+                        <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator7" runat="server"
+                            ValidationGroup="SendContact" ControlToValidate="txtTitle" ErrorMessage="Thông tin bắt buộc!"
+                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Nội dung</label>
                     <div class="form-input">
                         <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine"></asp:TextBox>
