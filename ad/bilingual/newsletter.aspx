@@ -75,7 +75,7 @@
     <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback">
         <asp:Panel ID="pnlSearch" DefaultButton="btnSearch" runat="server">
             <table class="search">
-                <tr>
+                <tr class="invisible">
                     <td class="left" style="vertical-align: middle">E-mail
                     </td>
                     <td>

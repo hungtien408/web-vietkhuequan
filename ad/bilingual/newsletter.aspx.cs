@@ -244,9 +244,15 @@ public partial class ad_single_partner : System.Web.UI.Page
                     bEnableSsl
                 );
 
-               
+                lblSucess.Text = "Email đã được gửi đi.";
+                lblSucess.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                lblSucess.Text = "Vui lòng chọn email.";
+                lblSucess.ForeColor = System.Drawing.Color.Red;
             }
         }
-        lblSucess.Text = "Email đã được gửi đi.";
+        
     }
 }
