@@ -53,6 +53,7 @@ namespace TLLib
         }
 
         public int NewsletterUpdate(
+            string EmailID,
             string Email,
             string FullName,
             string DiaChi,
@@ -66,6 +67,7 @@ namespace TLLib
                 var scon = new SqlConnection(connectionString);
                 var cmd = new SqlCommand("usp_Newsletter_Update", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EmailID", string.IsNullOrEmpty(EmailID) ? dbNULL : (object)EmailID);
                 cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? dbNULL : (object)Email);
                 cmd.Parameters.AddWithValue("@FullName", string.IsNullOrEmpty(FullName) ? dbNULL : (object)FullName);
                 cmd.Parameters.AddWithValue("@DiaChi", string.IsNullOrEmpty(DiaChi) ? dbNULL : (object)DiaChi);
@@ -97,7 +99,7 @@ namespace TLLib
 
 
         public int NewsletterDelete(
-            string Email
+            string EmailID
         )
         {
             try
@@ -105,7 +107,7 @@ namespace TLLib
                 var scon = new SqlConnection(connectionString);
                 var cmd = new SqlCommand("usp_Newsletter_Delete", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? dbNULL : (object)Email);
+                cmd.Parameters.AddWithValue("@EmailID", string.IsNullOrEmpty(EmailID) ? dbNULL : (object)EmailID);
                 SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
                 errorCodeParam.Size = 4;
                 errorCodeParam.Direction = ParameterDirection.Output;

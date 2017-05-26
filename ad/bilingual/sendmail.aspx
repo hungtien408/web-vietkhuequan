@@ -91,7 +91,7 @@
                         <asp:RadAutoCompleteBox RenderMode="Lightweight" runat="server" ID="rabEmail"
                             EmptyMessage="Nhập email"
                             DataSourceID="ObjectDataSource1" DataTextField="Email" InputType="Token" Width="500"
-                            DropDownWidth="150px" >
+                            DropDownWidth="150px" AllowCustomEntry="true">
                         </asp:RadAutoCompleteBox>
                     </td>
                 </tr>
@@ -99,8 +99,9 @@
                     <td class="left">Tiêu đề E-Mail
                     </td>
                     <td>
-                        <asp:RadTextBox ID="txtSubject" runat="server" Width="500px" EmptyMessage="Subject...">
+                        <asp:RadTextBox ID="txtSubject" runat="server" Width="500px" EmptyMessage="Subject..." ValidationGroup="SendEmailVKQ">
                         </asp:RadTextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Thông tin bắt buộc" ValidationGroup="SendEmailVKQ" ControlToValidate="txtSubject"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -119,7 +120,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="right">
-                        <asp:RadButton ID="btnSendEmail" runat="server" Text="Gởi Email" OnClick="btnSendEmail_Click">
+                        <asp:RadButton ID="btnSendEmail" runat="server" Text="Gởi Email" OnClick="btnSendEmail_Click" ValidationGroup="SendEmailVKQ">
                         </asp:RadButton>
                     </td>
                 </tr>

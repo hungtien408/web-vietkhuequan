@@ -16,9 +16,17 @@ public partial class contact : System.Web.UI.Page
     {
         if (Page.IsValid)
         {
+            string strCompany = txtCompany.Text.Trim().ToString();
+            string strChucVu = txtChucVu.Text.Trim().ToString();
+            string strTitle =  txtTitle.Text.Trim().ToString();
+            string strEmail =  txtEmail.Text.Trim().ToString();
+            string strPhone =  txtPhone.Text.Trim().ToString();
+            string strFullName =  txtFullName.Text.Trim().ToString();
+            string strContent = txtContent.Text.Trim().ToString();
+
             System.Threading.Thread threadEmail = new System.Threading.Thread(delegate ()
             {
-                sendEmail();
+                sendEmail(strCompany, strChucVu, strTitle, strEmail, strPhone, strFullName, strContent);
             });
             threadEmail.Start();
 
@@ -33,7 +41,7 @@ public partial class contact : System.Web.UI.Page
             txtTitle.Text = "";
         }
     }
-    private void sendEmail()
+    private void sendEmail(string company, string chucvu, string title, string email, string phone, string fullname, string content)
     {
         string msgKH = "The information sent from the customer reached the VKQ server in this mail. It is an automatic delivery mail that is sent at the time.";
         msgKH += "<br/>-------------------------------------------------------<br />";
@@ -42,23 +50,23 @@ public partial class contact : System.Web.UI.Page
         msgKH += "Tel : +84 08 73 012 247 <br />";
         msgKH += "-------------------------------------------------------<br />";
         msgKH += "The following contents have arrived. <br />";
-        msgKH += "<b>Company name: </b>" + txtCompany.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Department name: </b>" + txtChucVu.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Title name: </b>" + txtTitle.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Mail address: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Phone number: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Customer's full name: </b>" + txtFullName.Text.Trim().ToString() + "<br />";
-        msgKH += "<b>Content: </b>" + txtContent.Text.Trim().ToString();
+        msgKH += "<b>Company name: </b>" + company + "<br />";
+        msgKH += "<b>Department name: </b>" + chucvu + "<br />";
+        msgKH += "<b>Title name: </b>" + title + "<br />";
+        msgKH += "<b>Mail address: </b>" + email + "<br />";
+        msgKH += "<b>Phone number: </b>" + phone + "<br />";
+        msgKH += "<b>Customer's full name: </b>" + fullname + "<br />";
+        msgKH += "<b>Content: </b>" + content;
 
         string msg = "The following contents have arrived. <br />";
         msg += "-------------------------------------------------------<br />";
-        msg += "<b>Company name: </b>" + txtCompany.Text.Trim().ToString() + "<br />";
-        msg += "<b>Department name: </b>" + txtChucVu.Text.Trim().ToString() + "<br />";
-        msg += "<b>Title name: </b>" + txtTitle.Text.Trim().ToString() + "<br />";
-        msg += "<b>Mail address: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
-        msg += "<b>Phone number: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
-        msg += "<b>Customer's full name: </b>" + txtFullName.Text.Trim().ToString() + "<br />";
-        msg += "<b>Content: </b>" + txtContent.Text.Trim().ToString();
+        msg += "<b>Company name: </b>" + company + "<br />";
+        msg += "<b>Department name: </b>" + chucvu + "<br />";
+        msg += "<b>Title name: </b>" + title + "<br />";
+        msg += "<b>Mail address: </b>" + email + "<br />";
+        msg += "<b>Phone number: </b>" + phone + "<br />";
+        msg += "<b>Customer's full name: </b>" + fullname + "<br />";
+        msg += "<b>Content: </b>" + content;
 
         cmd.SendMail("mail.vkq.com.vn", 587, "info@vkq.com.vn", "Vietkhuequan020", txtEmail.Text.Trim().ToString(), "", "[vkq.com.vn web] Inquiry content confirmation (automatic delivery mail)", msgKH, false);
         cmd.SendMail("mail.vkq.com.vn", 587, "info@vkq.com.vn", "Vietkhuequan020", "info@vkq.com.vn", "badang@vkq.com.vn,s.haku@betterlifejp.com", "[vkq.com.vn web] Inquiry content confirmation", msg, false);

@@ -70,16 +70,18 @@ public partial class ad_single_partner : System.Web.UI.Page
         }
         else
         {
+            string strSubject = txtSubject.Text.Trim();
+            string strBody = FCKEditorFix.Fix(txtBody.Content.Trim());
             foreach (var item in email)
             {
                 Thread threadEmail = new Thread(delegate ()
                 {
                     if (!string.IsNullOrEmpty(item))
                     {
-                        SendEmail(item);
+                        SendEmail(item, strSubject, strBody);
                     }
                 });
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 threadEmail.Start();
             }
 
@@ -93,7 +95,7 @@ public partial class ad_single_partner : System.Web.UI.Page
         }
     }
 
-    private void SendEmail(string mailTo)
+    private void SendEmail(string mailTo, string subject, string body)
     {
         try
         {
@@ -104,8 +106,8 @@ public partial class ad_single_partner : System.Web.UI.Page
 
             string strMailTo = mailTo;
             string strCC = "";
-            string strSubject = txtSubject.Text.Trim();
-            string strBody = FCKEditorFix.Fix(txtBody.Content.Trim());
+            string strSubject = subject;
+            string strBody = body;
             bool bEnableSsl = true;
 
             cmd.SendMail(

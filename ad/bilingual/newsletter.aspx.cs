@@ -64,9 +64,11 @@ public partial class ad_single_partner : System.Web.UI.Page
             else
             {
                 var dsUpdateParam = ObjectDataSource1.UpdateParameters;
-                var strEmail = row.GetDataKeyValue("Email").ToString();
+                //var strEmail = row.GetDataKeyValue("Email").ToString();
+                var strEmailID = row.GetDataKeyValue("EmailID").ToString();
 
-                dsUpdateParam["Email"].DefaultValue = strEmail;
+                dsUpdateParam["EmailID"].DefaultValue = strEmailID;
+                dsUpdateParam["Email"].DefaultValue = strEmail1;
                 dsUpdateParam["FullName"].DefaultValue = strFullName;
                 dsUpdateParam["DiaChi"].DefaultValue = strDiaChi;
                 dsUpdateParam["Phone"].DefaultValue = strPhone;

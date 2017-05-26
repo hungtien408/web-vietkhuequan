@@ -112,7 +112,7 @@
             </ExportSettings>
             <MasterTableView CommandItemDisplay="TopAndBottom" DataSourceID="ObjectDataSource1"
                 InsertItemPageIndexAction="ShowItemOnCurrentPage" AllowMultiColumnSorting="True"
-                DataKeyNames="Email">
+                DataKeyNames="EmailID">
                 <PagerStyle AlwaysVisible="true" Mode="NextPrevNumericAndAdvanced" PageButtonCount="10"
                     FirstPageToolTip="Trang đầu" LastPageToolTip="Trang cuối" NextPagesToolTip="Trang kế"
                     NextPageToolTip="Trang kế" PagerTextFormat="Đổi trang: {4} &nbsp;Trang <strong>{0}</strong> / <strong>{1}</strong>, Kết quả <strong>{2}</strong> - <strong>{3}</strong> trong <strong>{5}</strong>."
@@ -290,7 +290,7 @@
         InsertMethod="NewsletterInsert" SelectMethod="NewsletterSelectAll" TypeName="TLLib.Newsletter"
         UpdateMethod="NewsletterUpdate">
         <DeleteParameters>
-            <asp:Parameter Name="Email" Type="String" />
+            <asp:Parameter Name="EmailID" Type="String" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Email" Type="String" />
@@ -305,6 +305,7 @@
             <asp:QueryStringParameter QueryStringField="PI" Name="NewsletterCategoryID" Type="String" />
         </SelectParameters>
         <UpdateParameters>
+            <asp:Parameter Name="EmailID" Type="String" />
             <asp:Parameter Name="Email" Type="String" />
             <asp:Parameter Name="FullName" Type="String" />
             <asp:Parameter Name="DiaChi" Type="String" />
